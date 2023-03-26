@@ -1,0 +1,21 @@
+.. demo documentation master file, created by
+   sphinx-quickstart on Sun Mar 26 00:33:56 2023.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Welcome to demo's documentation!
+================================
+
+.. toctree::
+   :maxdepth: 3
+   :caption: Contents:
+
+   ./demo/file/intro
+   ./demo/file/sample
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
