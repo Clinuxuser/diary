@@ -8,10 +8,8 @@ Welcome to demo's documentation!
 
 .. toctree::
    :maxdepth: 3
-   :caption: Contents:
 
    ./demo/file/intro
-   ./demo/file/sample
 
 Indices and tables
 ==================
