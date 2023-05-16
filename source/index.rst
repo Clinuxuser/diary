@@ -10,6 +10,7 @@ Welcome to demo's documentation!
    :maxdepth: 3
 
    ./demo/file/intro
+   ./demo/file/tools
 
 Indices and tables
 ==================
