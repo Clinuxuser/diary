@@ -7,10 +7,12 @@ Welcome to demo's documentation!
 ================================
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
 
-   ./demo/file/intro
-   ./demo/file/tools
+   demo/index
+   work/index
+
+
 
 Indices and tables
 ==================
