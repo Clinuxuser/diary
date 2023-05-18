@@ -4,4 +4,4 @@
 .. toctree::
     :maxdepth: 2
 
-    file/证书相关.rst
+    file/ca.rst
