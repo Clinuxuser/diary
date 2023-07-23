@@ -99,6 +99,14 @@ enable_kmods   value值 变成 true
 
     cd dpdk-kmods-main/linux/igb_uio/
     make
+##### 三绑定ibg_uio.ko
+绑定igb_uio.ko
+```
+modprobe uio
+insmod igb_uio.ko
+```
+查看驱动：
+lsmod | grep igb_uio
 
 [下载路径]:https://git.dpdk.org/dpdk-kmods/commit/?id=e68a705cc5dc3d1333bbcd722fe4e9a6ba3ee648
 [参考路径]:https://www.cnblogs.com/qz652219228/archive/2022/09/24/16712813.html
