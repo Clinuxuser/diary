@@ -58,3 +58,39 @@ git fetch --tags <repository> <tag>
 ```
 git checkout <tag>
 ```
+### git使用问题
+#### 问题1：22端口被禁用
+##### 问题现象
+```
+$ git pull
+	ssh: connect to host github.com port 22: Connection refused
+	fatal: Could not read from remote repository.
+
+	Please make sure you have the correct access rights
+	and the repository exists.
+```
+##### 问题原因
+	ssh: connect to host github.com port 22: Connection refused这个错误提示的是连接github.com的22端口被拒绝了
+
+##### 解决思路
+给~/.ssh/config文件里添加如下内容，这样ssh连接GitHub的时候就会使用443端口。
+```
+Host github.com
+  Hostname ssh.github.com
+    Port 443
+```
+
+##### 解决方案
+使用GitHub的443端口
+1.vim ~/.ssh/config
+
+2.添加以下内容
+```
+# Add section below to it
+Host github.com
+	Hostname ssh.github.com
+	Port 443
+```
+
+3.执行命令
+sh -T git@github.com
