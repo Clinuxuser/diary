@@ -28,7 +28,6 @@ git 命令
 
    git status
    git add -A 将本地修改的文件推到本地缓存区
-   git reset HARD 取消git add
    git commit 写说明
    git commit --amend  重新修改描述
    git push
@@ -43,8 +42,6 @@ git 命令
 
    回退版本:gir reset --hard  版本号
    git reset --hard 9e93c73e770cd30bc47a402cab350f323215e3fe
-
-   强推：git push origin 分支名称 -f
 
    删除本地分支：git branch -d  分支名称
        如：git branch -d dzl-rule
@@ -73,3 +70,55 @@ checkout命令切换到特定的标签。
 ::
 
    git checkout <tag>
+
+git使用问题
+~~~~~~~~~~~
+
+问题1：22端口被禁用
+^^^^^^^^^^^^^^^^^^^
+
+问题现象
+''''''''
+
+::
+
+   $ git pull
+       ssh: connect to host github.com port 22: Connection refused
+       fatal: Could not read from remote repository.
+
+       Please make sure you have the correct access rights
+       and the repository exists.
+
+问题原因
+''''''''
+
+::
+
+   ssh: connect to host github.com port 22: Connection refused这个错误提示的是连接github.com的22端口被拒绝了
+
+解决思路
+''''''''
+
+给~/.ssh/config文件里添加如下内容，这样ssh连接GitHub的时候就会使用443端口。
+
+::
+
+   Host github.com
+     Hostname ssh.github.com
+       Port 443
+
+解决方案
+''''''''
+
+使用GitHub的443端口 1.vim ~/.ssh/config
+
+2.添加以下内容
+
+::
+
+   # Add section below to it
+   Host github.com
+       Hostname ssh.github.com
+       Port 443
+
+3.执行命令 sh -T git@github.com
