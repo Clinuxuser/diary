@@ -30,17 +30,6 @@ yum -y install rpm-build yum install rpmdevtools
 
 源代码tar包或者tar.gz放入SOURCES文件夹下。
 
-工作空间介绍： \|默认位置 \|宏代码 \|名称\| 用途\| \| :–:|:–:|:–:|:–:\|
-\| ~/rpmbuild/SPECS \| %_specdir \| Spec 文件目录 \| 保存 RPM
-包配置（.spec）文件 \| \| ~/rpmbuild/SOURCES \| %_sourcedir \|
-源代码目录 \| 保存源码包（如 .tar 包）和所有 patch 补 \| \|
-~/rpmbuild/BUILD \| %_builddir \| 构建目录 \|
-源码包被解压至此，并在该目录的子目录完成编译 \| \| ~/rpmbuild/BUILDROOT
-\| %_buildrootdir\| 最终安装目录 \|保存 %install 阶段安装的文件 \| \|
-~/rpmbuild/RPMS \| %_rpmdir \| 标准 RPM 包目录 \| 生成/保存二进制 RPM 包
-\| \| ~/rpmbuild/SRPMS \| %_srcrpmdir \| 源代码 RPM 包目录 \|
-生成/保存源码 RPM 包(SRPM) \|
-
 其中，“宏代码”这一列就可以在SPEC文件中用来代指所对应的目录，类似于编程语言中的宏或全局变量。当然~/rpmbuild这个文件夹也是有宏代码的，叫做%_topdir
 
 编写配置文件
